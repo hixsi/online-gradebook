@@ -25,9 +25,10 @@ public class EmployeeService {
         return employees;
     }
 
-    public void addEmployee(@ModelAttribute Employee employee) {
+    public Employee addEmployee(@ModelAttribute Employee employee) {
         userRepository.save(employee.getUser());
         employeeRepository.save(employee);
+        return employee;
     }
 
     public Employee findEmployeeById(@PathVariable("id") int id) {
