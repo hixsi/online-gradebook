@@ -26,9 +26,10 @@ public class ParentService {
         return parents;
     }
 
-    public void addParent(@ModelAttribute Parent parent) {
+    public Parent addParent(@ModelAttribute Parent parent) {
         userRepository.save(parent.getUser());
         parentRepository.save(parent);
+        return parent;
     }
 
     public Parent findParentById(@PathVariable("id") int id) {
