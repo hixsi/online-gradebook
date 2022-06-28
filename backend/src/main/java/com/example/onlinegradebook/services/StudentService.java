@@ -30,9 +30,10 @@ public class StudentService {
         return students;
     }
 
-    public void addStudent(@ModelAttribute Student student) {
+    public Student addStudent(@ModelAttribute Student student) {
         userRepository.save(student.getUser());
         studentRepository.save(student);
+        return student;
     }
 
     public Student findStudentById(@PathVariable("id") int id) {
