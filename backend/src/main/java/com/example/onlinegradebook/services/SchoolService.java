@@ -23,8 +23,9 @@ public class SchoolService {
         return schools;
     }
 
-    public void addSchool(@ModelAttribute School school) {
-        schoolRepository.save(school);
+    public School addSchool(@ModelAttribute School school) {
+        schoolRepository.save(school)
+        return school;
     }
 
     public School findSchoolById(@PathVariable("id") int id) {
